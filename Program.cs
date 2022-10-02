@@ -16,6 +16,15 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         [JsonProperty("alt")]
         public string Alt { get; set; }
+
+        [JsonProperty("day")]
+        public string Day { get; set; }
+
+        [JsonProperty("month")]
+        public string Month { get; set; }
+
+        [JsonProperty("year")]
+        public string Year { get; set; }
     }
 
 
@@ -51,6 +60,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     var comic = JsonConvert.DeserializeObject<Comic>(resultRead);
 
                     Console.WriteLine("Title: " + comic.Title);
+                    Console.WriteLine("Date: " + comic.Month + "/" + comic.Day + "/" + comic.Year);
                     Console.WriteLine("Alt Text: " + comic.Alt);
                     Console.WriteLine("Image Link: " + comic.IMG_link);
 
